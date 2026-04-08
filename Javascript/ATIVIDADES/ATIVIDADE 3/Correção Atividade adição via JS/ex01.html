@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div>
+            <h1>Verificador de Idade</h1>
+        </div>
+        <div>
+            <p>Ano de Nascimento: 
+                <input type="number" id="anoNascimento">
+            </p>
+            <p>Sexo: 
+                <input type="radio" name="sexo" id="masculino">
+                <label for="masculino">Masculino</label>
+
+                <input type="radio" name="sexo" id="feminino">
+                <label for="feminino">Feminino</label>
+            </p>
+
+            <button onclick="verificarIdade()">Verificar</button>
+
+            <p id="resultado">Prencha os dados acima para o resultado!</p>
+
+            <!--<p id="imagem">
+                <img src="bebe-H.png" alt="">
+                <img src="jovem-H.png" alt="">
+                <img src="adulto-H.png" alt="">
+                <img src="idoso-H.png" alt="">
+                <img src="bebe-M.png" alt="">
+                <img src="jovem-M.png" alt="">
+                <img src="adulto-M.png" alt="">
+                <img src="idoso-M.png" alt="">
+            </p>
+            -->
+        </div>
+    </section>
+    <script>
+        function verificarIdade() {
+            var dataAtual = new Date();
+            var anoAtual = dataAtual.getFullYear();
+            var anoNascimento = document.getElementById("anoNascimento").value;
+            var resultado = document.getElementById("resultado");
+            var masculino = document.getElementById("masculino").checked;
+            var feminino = document.getElementById("feminino").checked;
+            //var imagens = document.querySelectorAll("#imagem img");
+    
+    // Converter para número
+    anoNascimento = parseInt(anoNascimento);
+    
+    // Verificar se é um número válido
+    if (isNaN(anoNascimento) || anoNascimento > anoAtual) {
+        alert("Verifique os dados e tente novamente!");
+        return;
+    }
+    
+    var idade = anoAtual - anoNascimento;
+    var genero = "";
+    var img = document.createElement("img");
+    img.setAttribute("id", "imagem");
+
+   
+    // Esconder todas as imagens antes de mostrar a correta
+    var imagemAnterior = document.getElementById("imagem");
+    if (imagemAnterior) {
+        imagemAnterior.remove();
+    }
+
+    if (masculino) {
+        genero = "Homem";
+        if (idade >= 0 && idade < 10) {
+            img.setAttribute("src", "bebe-H.png");
+
+            //imagens[0].style.display = 'block';
+            
+
+        } else if (idade < 21) {
+            img.setAttribute("src", "jovem-H.png");
+
+            //imagens[1].style.display = 'block';
+
+        } else if (idade < 50) {
+            img.setAttribute("src", "adulto-H.png");
+
+            //imagens[2].style.display = 'block';
+
+        } else {
+            img.setAttribute("src", "idoso-H.png");
+
+            //imagens[3].style.display = 'block';
+        }
+    } else if (feminino) {
+        genero = "Mulher";
+        if (idade >= 0 && idade < 10) {
+            img.setAttribute("src", "bebe-M.png");
+
+            //imagens[4].style.display = 'block';
+
+        } else if (idade < 21) {
+            img.setAttribute("src", "jovem-M.png");
+
+            //imagens[5].style.display = 'block';
+
+        } else if (idade < 50) {
+            img.setAttribute("src", "adulto-M.png");
+
+            //imagens[6].style.display = 'block';
+
+        } else {
+            img.setAttribute("src", "idoso-M.png");
+
+            //imagens[7].style.display = 'block';
+        }
+    } else {
+        alert("Por favor, selecione o sexo.");
+        return;
+    }
+
+    resultado.innerHTML = `Detectamos ${genero} com ${idade} anos.`;
+    resultado.appendChild(img);
+}
+        
+    </script>
+    <footer>
+        <p>&copy; Desenvolvido por: Black</p>
+    </footer>
+</body>
+</html>

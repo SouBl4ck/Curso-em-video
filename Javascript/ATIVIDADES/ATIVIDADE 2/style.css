@@ -1,0 +1,49 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+section{
+    color: white;
+    background: #1a1a1a;
+    border-radius: 15px;
+    width: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 5px 5px 15px #000000;
+    text-align: center;
+}
+
+ /* Adicione este CSS para garantir que funcione */
+        #hora {
+            color: #00e1ff;
+            font-size: 4em;
+            text-align: center;
+            font-family: monospace;
+            margin: 20px;
+        }
+        
+        /* Remove qualquer span dentro do #hora */
+        #hora span {
+            display: none;
+        }
+
+
+footer{
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 3px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+

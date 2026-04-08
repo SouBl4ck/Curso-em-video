@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Descendencia</h1>
+    </header>
+
+    <section>
+        <div>
+            <input type="text" name="txtnome" id="txtnome" placeholder="Qual é o seu nome?">
+            <input type="text" name="txtnac" id="txtnac" placeholder="Qual pais você nasceu?">
+        </div>
+        <div>
+            <input type="button" value="verificar" onclick="verificar()">
+            <div id="res">Resposta</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Desenvolvido por: Black</p>
+    </footer>
+
+    <script>
+        function verificar() {
+            var nome = document.getElementById('txtnome').value;
+            var nac = document.getElementById('txtnac').value;
+            var res = document.getElementById('res');
+
+            res.innerHTML = `<p>Seu nome é <strong>${nome}</strong> e você nasceu em <strong>${nac}</strong>.</p>`;
+
+            if (nac == 'brasil' || nac == 'Brasil' || nac == 'BRASIL') {
+                res.innerHTML += `<p>Você é <strong>BRASILEIRO(A)</strong>!</p>`;
+                
+            } else {
+                res.innerHTML += `<p>Você é <strong>ESTRANGEIRO(A)</strong>!</p>`;
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de passos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Passos</h1>
+    </header>
+    <section>
+        <div>
+            <p>Inicio: <input placeholder="Inicio" type="number" id="Num"></p>
+            <p>Fim: <input placeholder="Fim" type="number" id="Fim"></p>
+            <p>Passo: <input placeholder="Passo" type="number" id="Passo"></p>
+            <button onclick="contar()">Executar</button>
+            <p id="resultado">Resultado</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Desenvolvido por: Black</p>
+    </footer>
+    <script>
+        function contar() {
+            var num = document.getElementById("Num").value;
+            var fim = document.getElementById("Fim").value;
+            var passo = document.getElementById("Passo").value;
+            var resultado = document.getElementById("resultado");
+            var contagem = "";
+    
+            // Converter para número
+            num = parseInt(num);
+            fim = parseInt(fim);
+            passo = parseInt(passo);
+    
+            // Verificar se é um número válido
+            if (isNaN(num) || isNaN(fim) || isNaN(passo)) {
+                alert("Verifique os dados e tente novamente!");
+                return;
+            }
+    
+            for (var i = num; i <= fim; i += passo) {
+                contagem += i + " 👉 ";
+            }
+    
+            resultado.innerHTML = contagem;
+        }
+    </script>
+</body>
+</html>

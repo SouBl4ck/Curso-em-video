@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Relogio</h1>
+    </header>
+    <section>
+            <p id="hora"><span>:</span></p>
+        </div>
+        <div id="imagens">
+            <img src="Imagens/Manhã.png" alt="">
+            <img src="Imagens/Tarde.png" alt="">
+            <img src="Imagens/Noite.png" alt="">
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Desenvolvido por: Black</p>
+    </footer>
+    
+    <script>
+    // UNIFICA OS DOIS SCRIPTS EM UM SÓ
+    function atualizarTudo() {
+        // PARTE 1: ATUALIZAR RELÓGIO DIGITAL
+        const agora = new Date();
+        const hora = agora.getHours();
+        const minutos = agora.getMinutes();
+        const segundos = agora.getSeconds();
+        
+        // Formata e mostra a hora
+        const horaFormatada = 
+            hora.toString().padStart(2, '0') + ':' +
+            minutos.toString().padStart(2, '0') + ':' +
+            segundos.toString().padStart(2, '0');
+        
+        document.getElementById("hora").textContent = horaFormatada;
+        
+        // PARTE 2: ATUALIZAR IMAGENS
+        const imagens = document.querySelectorAll('#imagens img');
+        
+        // Primeiro, garante que o CSS está correto
+        imagens.forEach(img => {
+            img.style.position = 'center';
+            img.style.width = '350x';
+            img.style.height = '350px';
+            img.style.display = 'none';
+            img.style.margin = '20px auto';
+            img.style.borderRadius = '40px';
+        });
+        
+        // Mostra a imagem correta
+        if (hora >= 6 && hora < 12) {
+            imagens[0].style.display = 'block';
+            
+
+        } else if (hora >= 12 && hora < 18) {
+            imagens[1].style.display = 'block';
+            
+            
+        } else {
+            imagens[2].style.display = 'block';
+          
+        }
+
+        //Muda a cor da pagina
+        if (hora >= 6 && hora < 12) {
+            document.body.style.backgroundColor = '#87CEEB'; // Azul claro para manhã
+        } else if (hora >= 12 && hora < 18) {
+            document.body.style.backgroundColor = '#FFD700'; // Amarelo para tarde
+        } else {
+            document.body.style.backgroundColor = '#2F4F4F'; // Cinza escuro para noite
+        }
+        
+    }
+    
+    // Inicia quando a página carrega
+    document.addEventListener('DOMContentLoaded', function() {
+        atualizarTudo(); // Executa imediatamente
+        setInterval(atualizarTudo, 1000); // Atualiza a cada segundo
+    });
+</script>
+
+</body>
+</html>

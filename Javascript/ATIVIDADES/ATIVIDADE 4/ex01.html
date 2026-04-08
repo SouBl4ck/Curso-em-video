@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section>
+        <div>
+            <h1>Tabuada</h1>
+            <input placeholder="Numero" type="number" id="Num">
+        </div>
+        <div>
+            <button onclick="tabuada()">Gerar Tabuada</button>
+            <p id="resultado">Resultado</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Desenvolvido por: Black</p>
+    </footer>
+    <script>
+        function tabuada() {
+            var num = document.getElementById("Num").value;
+            var resultado = document.getElementById("resultado");
+            var tabuada = "";
+    
+            // Converter para número
+            num = parseInt(num);
+    
+            // Verificar se é um número válido
+            if (isNaN(num)) {
+                alert("Verifique os dados e tente novamente!");
+                return;
+            }
+    
+            for (var i = 1; i <= 10; i++) {
+                tabuada += num + " x " + i + " = " + (num * i) + "<br>";
+            }
+    
+            resultado.innerHTML = tabuada;
+        }
+    </script>
+</body>
+</html>
