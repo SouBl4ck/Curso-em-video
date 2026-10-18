@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Green Card</title>
+</head>
+<body>
+    <h1>Analise de perfil</h1>
+    <input type="text" placeholder="Onde Você nasceu?" id="nac">
+    <input type="button" value="Verificar" onclick="Verificar()">
+    
+    <div id="res"></div>
+
+    <script>
+        var nac = document.getElementById('nac')
+        var res = document.getElementById('res')
+        
+
+        function Verificar(){
+            var pais = nac.value
+
+            res.innerHTML = `Vivendo em ${pais.toLowerCase()} <br>`
+
+            if(pais.toLowerCase() === 'brasil'){
+            res.innerHTML += 'Você é brasileiro e não tem direito ao green card'
+            }else {
+            res.innerHTML += 'Você tem direito ao green card'
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

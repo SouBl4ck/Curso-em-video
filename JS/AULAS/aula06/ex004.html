@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = window.prompt("Qual é o seu nome?") // window.prompt() retorna uma string
+        document.write(`<h1>Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.</h1>`) // Concatenação de strings usando template strings
+        document.write(`<p>Seu nome em maiúsculas é: ${nome.toUpperCase()}</p>`) // Concatenação de strings usando template strings
+        document.write(`<p>Seu nome em minúsculas é: ${nome.toLowerCase()}</p>`) // Concatenação de strings usando template strings
+    </script>
+</body>
+</html>

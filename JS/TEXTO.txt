@@ -1,0 +1,487 @@
+MODULO A  
+
+Aula 1: {Oq faz o Javascript}
+
+Comando JS em paginas do google:
+
+DevTools -> console
+
+document.body.style.background = 'black'
+
+---------------------------------------------------------------------------------------------------
+
+Aula 2: {Evolução JS}
+
+Concluida
+
+---------------------------------------------------------------------------------------------------
+
+Aula 3: {Primeiros passos JS}
+
+Bibliografia:
+Javascript o guia definitivo
+Javascript guia do programador
+
+---------------------------------------------------------------------------------------------------
+
+Aula 4: {Nossos Primeiros Scripts}
+
+window.alert()
+
+window.confirm()
+
+window.prompt()
+
+---------------------------------------------------------------------------------------------------
+
+MODULO B
+
+Aula 5: {Tipo de dados e variaveis}
+
+Comentario em Javascript:
+
+//    - comentario em uma unica linha
+/* */ - mais de uma linha para comentario
+
+
+vaga a1 = carro1
+a1 = carro2
+a1 = null
+null é o mesmo que vazio
+
+sinal de igual(=) é igual recebe
+
+
+Em computadores seria o var ou variaveis
+
+exemplo:
+variaveis de Numeros:
+
+var n1 = 5
+var n2 = 8.5
+var n3 = 15
+
+variaveis de string:
+
+var s1 = "Javascript"
+var s2 = 'Curso em video'
+var s3 = `Guanabara`
+
+Indentificadores para variaveis:
+
+    • podem começar com letra, $ ou _
+
+    • não pode começar com Numeros
+
+    • é possivel usar letras ou Numeros
+
+    • é possivel usar acentos e simbolos
+
+    • não podem conter espaços
+
+    • não pode ser palavras reservadas
+
+exemplo: var, function e nenhuma palavra que seja um comando
+
+Dicas para criação de variaveis:
+
+    • Maiusculas e minusculas fazem diferença
+
+    • Tente escolher nomes coerentes para variaveis
+
+Tipos Primitivos de dados:
+
+• String
+    "google"
+    'Javascript'
+    `Maria`
+
+• number 
+    5  
+    18
+    -12
+    0.5
+    -15.9
+    3.14
+    8.0
+
+    • Infinity
+    • NaN
+
+• boolean
+    True
+    False
+
+• null
+• undefined
+• object
+    • Array
+• function
+
+para ver o tipo das variaveis podemos usar o comando:
+    • typeof
+
+---------------------------------------------------------------------------------------------------
+
+Aula 6: {Manipulação de dados}
+
+Comentarios nas 3 linguagens:
+
+   • <!-- --> = HTML
+
+   • /**/ = CSS
+
+   • // e /**/ = JS
+
+Conversão String > Numero:
+    Number.parseInt(n)   - para Numeros Inteiros
+    Number.parseFloat(n) - para Numeros Reais
+    Number(n)            - para Numeros inteiros e reais
+
+Formatando String:
+var s = 'Javascript'
+
+    'Eu estou aprendendo s'    - não faz interpolação
+    'Eu estou aprendendo' + s  - usa Concatenação
+    `Eu estou aprendendo ${s}` - usa template string (template string só funciona com crase)
+
+
+    s.lenght             - para quantos caracteres a string tem
+    s.toUpperCase()      - tudo para 'MAIUSCULAS'
+    s.toLowerCase()      - tudo para 'minusculas'
+
+Formatando Numeros:
+var n1 = 1545.5
+
+    n1.toFixed(2)                                                   - para fixo com 2 casas
+    n1.toFixed(2).replace('.',',')                                  - para trocar o ponto dos numeros
+    n1.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'}) - para colocar o numero como tipo de moeda
+
+(number + number) para Adição
+(string + string) para Concatenação
+
+---------------------------------------------------------------------------------------------------
+
+Aula 7: {Operadores} - parte 1
+
+Operadores:
+    • aritmeticos
+    • atribuição
+
+    • relacionais
+    • logicos
+    • ternario
+
+aritmeticos:
+   5  + 2 -> 7
+   5  - 2 -> 3
+   5  * 2 -> 10
+   5  / 2 -> 2,5
+   5  % 2 -> 1
+   5 ** 2 -> 25
+
+Precedencia:
+
+|   ()
+|   **
+|   * / %
+|   + -
+V
+
+FORMA LONGA         FORMA SIMPLIFICADA      OPERACAO
+n = n + 4        ->   n += 4                Soma
+n = n - 5        ->   n -= 5                Subtracao
+n = n * 4        ->   n *= 4                Multiplicacao
+n = n / 2        ->   n /= 2                Divisao
+n = n ** 2       ->   n **= 2               Potenciacao (exponenciacao)
+n = n % 5        ->   n %= 5                Modulo (resto da divisao)
+
+---------------------------------------------------------------------------------------------------
+
+Aula 8: {Operadores} - parte 2
+
+Operadores:
+    • relacionais
+        • Identidade
+        5 ==  5   -> True
+        5 == '5'  -> True
+        5 ==='5'  -> false
+        5 === 5   -> True
+
+    • logicos
+    • ternario
+
+relacionais:
+ 5 > 2  -> True
+ 7 < 4  -> false
+ 8 >= 8 -> True
+ 9 <= 7 -> false
+ 5 == 5 -> True
+ 4 != 4 -> false
+
+logicos:
+    • !  -> negação   / not
+    • && -> conjunção / and 
+    • || -> disjunção / or
+
+Precedencia:
+
+|   () ** \   ...
+|   >  <  >=  ...
+|   !
+|   &&
+|   ||
+V
+
+ternario:
+    • ? :
+
+    TESTE ? true : false
+
+---------------------------------------------------------------------------------------------------
+
+MODULO C
+
+Aula 9: {Introdução ao DOM}
+
+O que é dom?
+
+    • document object model
+
+        window
+        ├── location
+        ├── document
+        │   └── html
+        │       ├── head
+        │       │   ├── meta
+        │       │   └── title
+        │       └── body
+        │           ├── h1
+        │           ├── p
+        │           ├── p
+        │           │   └── strong
+        │           └── div
+        └── history
+
+Acesso ao DOM por:
+    • por Marca
+        getElementsByTagName()
+
+    • por ID 
+        getElementById()
+
+    • por Nome 
+        getElementByName()
+
+    • por Classe
+        getElementByClassName()
+
+    • por Seletor
+        querySelector()
+        querySelectorAll()
+
+        id    -> #
+        class -> .
+
+---------------------------------------------------------------------------------------------------
+
+Aula 10: {Eventos DOM}
+
+Funçoes
+    • bloco
+
+    function açao(parametros) {
+
+    }
+
+---------------------------------------------------------------------------------------------------
+
+Modulo D
+
+Aula 11: {Condições} - parte 1
+
+Sequências:
+    • var n = 3
+    |
+    V 
+
+    • n += 2
+    |
+    V 
+
+    • window.alert(n)
+
+Condições:
+
+                            (*)
+                             |
+                             v
+                   +-------------------+
+                   |    idade = 20     |
+                   +-------------------+
+                             |
+                             v
+                   +-------------------+
+                   |  verificar idade  |
+                   +-------------------+
+                             |
+                             v
+                            / \
+                           /   \
+                          /     \
+                         /       \
+           +---- sim ---<maior 18?>--- não ----+
+           |             \       /             |
+           |              \     /              |
+           |               \   /               |
+           |                \ /                |
+           v                                   v
+   +---------------+                   +---------------+
+   |    adulto     |                   |     menor     |
+   +---------------+                   +---------------+
+           |                                   |
+           +---------------->o<----------------+
+                             |
+                             v
+                   +-------------------+
+                   |  fim do programa  |
+                   +-------------------+
+                             |
+                             v
+                            (o)
+
+
+Condições:
+
+                                 |
+                                 v
+                                / \
+                               /   \
+        +--------------------<condição>------------------+
+        |                      \   /                     |
+        |                       \ /                      |
+        v                                                v
+   +---------+                                      +---------+
+   |  true   |                                      |  false  |
+   +---------+                                      +---------+
+        |                                                |
+        +---------------------->o<-----------------------+
+                                 |
+                                 v
+
+
+   if (condição) {
+
+           +---------+
+           |  true   |
+           +---------+
+
+   } else {
+
+           +---------+
+           |  false  |
+           +---------+
+
+   }
+
+Tipos de Condição:
+
+├── if(condição){    -> condição simples
+│    true
+└──}
+
+
+├──if(condição) {    -> condição composta
+│    true
+├──}else {
+│    false
+└──}
+
+---------------------------------------------------------------------------------------------------
+
+Aula 12: {Condições} - parte 2
+
+                                |
+                                v
+                        +-------------+
+                +------ | if (cond1)  |-------+
+                |       +-------------+       |
+              false                          true
+                |                             |
+                v                             v
+            +-----------+              +-------------+
+            |   else    |         +----| if (cond2)  |----+
+            +-----------+         |    +-------------+    |
+                |               false                    true
+                |                 |                       |
+                |                 v                       v
+                |         +-----------+           +-----------+
+                |         |   else    |           |   then    |
+                |         +-----------+           +-----------+
+                |               |                       |
+                |               +--------->(o)<---------+
+                |                           |
+                +----------->(o)<-----------+
+                              |
+                              v
+
+Exemplos:
+
+├──if(condição) {                 ├──if(condição) {
+│                                 │  
+│   (      )                      │ (     )
+│                                 │
+├──}else {                        ├──} else if{
+│                                 │ 
+│   ├──if {                       │ (     )
+│   │   (   )                     │
+│   ├──}else{                     ├──}else{
+│   │   (   )                     │ (     )
+│   └──}                          │
+│                                 └──}
+└──}
+
+ 
+
+Para pegar hora do atual do sistema que esta rodando no sistema
+    var agora = new Date()
+    var hora = agora.getHours() 
+
+Condição Multipla:
+
+                            |
+                            v
+                     +-------------+
+          +----------| switch(x)   |----------+
+          |          +-------------+          |
+     +----+          |             |          +----+
+     |               |             |               |
+  case 1:         case 2:       case 3:        default:
+     |               |             |               |
+     v               v             v               v
++---------+     +---------+   +---------+     +---------+
+| bloco A |     | bloco B |   | bloco C |     | bloco D |
++---------+     +---------+   +---------+     +---------+
+     |               |             |               |
+     +-------------->+---->(o)<----+<--------------+
+                            |
+                            v
+
+├── switch(expressão) {
+│    case valor 1:
+│    (   )
+│    break
+│
+│    case valor 2:
+│    (   )
+│    break
+│
+│    case valor 3:
+│    (   )
+│    break
+│
+│    case valor 4:
+│    (   )
+│
+└──}
+
